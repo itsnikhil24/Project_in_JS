@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    * {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+    }
+    body,
+    html {
+      height: 100%;
+    }
+
+    .hero {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    #colorinput {
+      margin-bottom: 30px;
+    }
+    label {
+      font-size: 40px;
+    }
+    .box {
+      border: 5px solid black;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 5px;
+      background-color: #e8d1dc;
+    }
+    #applybutton {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 80px;
+      width: 160px;
+      border-radius: 40px;
+      font-size: 25px;
+      background-color: #baa7b1;
+      color: aliceblue;
+    }
+  </style>
+  <body>
+    <div class="hero">
+      <div class="box">
+        <h1 class="Heading1">Add Your Favourite Color In Website</h1>
+        <form>
+          <label for="colorinput">Select Color</label>
+          <input type="color" id="colorinput" />
+        </form>
+        <button onclick="apply()" id="applybutton">Done</button>
+
+        <!-- <p id="error_color" style="color: red"></p> -->
+      </div>
+    </div>
+  </body>
+  <script>
+    const body = document.querySelector("body");
+    function apply() {
+      let color = document.getElementById("colorinput").value;
+      //   if (color == "#000000") {
+      //     const error1=document.createTextNode("This color is same as text color so can't add");
+      //     const para=document.querySelector('#error_color');
+      //     para.appendChild(error1);
+      //     return;
+      //   }
+      body.style.backgroundColor = color;
+    }
+  </script>
+</html>
